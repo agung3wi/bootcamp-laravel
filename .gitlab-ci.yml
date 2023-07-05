@@ -4,13 +4,16 @@ build-job:
   script:
     - rm composer.lock
     - composer install
+  artifacts:
+    paths:
+      - "/builds/agung3wi/devops-private-juli-2023/"
 
 test-job1:
   image: php:7.4-cli
   stage: test
   script:
     - php artisan test
-    
+
 deploy-prod:
   stage: deploy
   script:
